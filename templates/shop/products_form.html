@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+    <h6>
+      {% if not form.instance.pk %}
+        Create Product
+      {% else %}
+        Update Product
+      {% endif %}
+    </h6>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class='btn btn-primary' value="Submit">
+  </form>
+
+{% endblock %}

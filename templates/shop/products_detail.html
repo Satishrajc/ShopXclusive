@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+    <h6>Product Information</h6>
+    <p>ID : {{ products_detail.id }}</p>
+    <p>Name : {{ products_detail.product_name }}</p>
+    <p>Category : {{ products_detail.category }}</p>
+    <p>Description : {{ products_detail.information }}</p>
+
+    <div class="container">
+        <a class='btn btn-warning' href="{% url 'shop:list' %}">Back</a>
+        <a class='btn btn-warning' href="{% url 'shop:update' pk=products_detail.pk %}">Update</a>
+        <a class='btn btn-warning' href="{% url 'shop:delete' pk=products_detail.pk %}">Delete</a>
+    </div>
+{% endblock %}

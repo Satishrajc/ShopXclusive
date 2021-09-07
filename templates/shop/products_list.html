@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+    <h6>Product List</h6>
+
+     <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Product</th>
+          <th scope="col">Category</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for product in products_list %}
+        <tr>
+          <th scope="row">1</th>
+            <td><a href="{% url 'shop:detail' product.id %}"}>{{product}} </a></td>
+            <td>{{product.category}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="container">
+        <a class='btn btn-warning' href="{% url 'shop:add' %}">Add</a>
+    </div>
+
+{% endblock %}
